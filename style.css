@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kumbh+Sans:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS VARIABLES */
+
+:root {
+    --VERY_DARK_BLUE: hsl(220, 13%, 13%);
+    --DARK_GREYISH_BLUE: hsl(219, 9%, 45%);
+    --GRAYISH_BLUE: hsl(220, 14%, 75%);
+    --LIGHT_GRAYISH_BLUE: hsl(223, 64%, 98%);
+    --WHITE: hsl(0, 0%, 100%);
+    --BLACK:  hsl(0, 0%, 0%);
+}
+
+body {
+    font-family: "Kumbh Sans", sans-serif;
+    width: 90vw;
+    margin: auto;
+}
+a {
+    text-decoration: none;
+    font-family: inherit;
+    color: var(--DARK_GREYISH_BLUE);
+    font-size: .85rem;
+}
+li {
+    list-style-type: none;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.lg {
+    display: flex;
+    gap: 2.5rem;
+    width: 50%;
+}
+.nav_items {
+    display: flex;
+    justify-content: space-between;
+}
+nav {
+    /* border: 1px solid green; */
+    width: 50%;
+}
+.cart {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+hr {
+    margin-top: 1.5rem;
+    border: none;
+    height: 1.3px;
+    background-color: var(--GRAYISH_BLUE);
+}
+ .image {
+    border-radius: 10px;
+ }
+ .sneaker_collections {
+    border: 1px solid red;
+    display: flex;
+    gap: 1.6rem;
+ }
+ .first_sneaker {
+    border-radius: 8px;
+ }
+ .second_sneaker {
+    border-radius: 8px;
+ }
+ .third_sneaker {
+    border-radius: 8px;
+ }
+ .fourth_sneaker {
+    border-radius: 8px;
+ }
