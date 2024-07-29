@@ -257,3 +257,84 @@ h3 {
 img {
     cursor: pointer;
 }
+.avartar:hover {
+    border: 2px solid var(--ORANGE);
+    border-radius: 50%;
+}
+.first_popped_sneaker,
+.second_popped_sneaker,
+.third_popped_sneaker,
+.fourth_popped_sneaker {
+    border-radius: 8px;
+}
+.popped_image {
+    border: 1px solid red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 29%;
+    height: 400px;
+    /* z-index: 9999; */
+}
+.main_carousel {
+    border: 1px solid blue;
+    height: 95%;
+    position: relative;
+}
+.carousel_track_container {
+    border: 1px solid green;
+    background: lightgreen;
+    padding: 10px;
+    height: 100%;
+    position: relative;
+}
+.carousel_track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.carousel_slide {
+    border: 1px solid yellow;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+.left_carousel_button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+    border: 0;
+    background-color: var(--WHITE);
+    width: 2rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.right_carousel_button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    z-index: 9999;
+    border: 0;
+    background-color: var(--WHITE);
+    width: 2rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.close {
+    border: 0;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    background: transparent;
+    /* position: absolute; */
+    z-index: 9999;
+    margin-left: 27.4rem;
+}
