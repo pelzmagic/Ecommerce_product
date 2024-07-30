@@ -265,7 +265,7 @@ img {
 .second_popped_sneaker,
 .third_popped_sneaker,
 .fourth_popped_sneaker {
-    border-radius: 8px;
+    border-radius: 17px;
 }
 .popped_image {
     border: 1px solid red;
@@ -275,8 +275,9 @@ img {
     right: 0;
     bottom: 0;
     margin: auto;
+    margin-top: 10rem;
     width: 29%;
-    height: 400px;
+    height: 450px;
     /* z-index: 9999; */
 }
 .main_carousel {
@@ -286,7 +287,6 @@ img {
 }
 .carousel_track_container {
     border: 1px solid green;
-    background: lightgreen;
     padding: 10px;
     height: 100%;
     position: relative;
@@ -337,4 +337,34 @@ img {
     /* position: absolute; */
     z-index: 9999;
     margin-left: 27.4rem;
+}
+.popped_sneaker_collection {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid red;
+    width: 85%;
+    margin: auto;
+    margin-top: 1.5rem;
+}
+.first_pop_sneaker,
+.second_pop_sneaker,
+.third_pop_sneaker,
+.fourth_pop_sneaker {
+    border-radius: 8px;
+}
+.sneaker1 {
+    width: 20%;
+    border: 1px solid red;
+}
+.sneaker2 {
+    width: 20%;
+    border: 1px solid blue;
+}
+.sneaker3 {
+    width: 20%;
+    border: 1px solid yellow;
+}
+.sneaker4 {
+    border: 1px solid steelblue;
+    width: 20%;
 }
