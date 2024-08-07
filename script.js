@@ -16,8 +16,16 @@ const thirdPopSneaker = document.querySelector(".third_pop_sneaker");
 const fourthPopSneaker = document.querySelector(".fourth_pop_sneaker");
 const poppedSneakerCollection = document.querySelector(".popped_sneaker_collection");
 const sneakers = Array.from(poppedSneakerCollection.children);
+const poppedImage = document.querySelector(".popped_image");
+const minusButton = document.querySelector(".minus_button");
+const additionButton = document.querySelector(".addition_button");
+const addToCartButton = document.querySelector(".add_to_cart");
+const zeroButton = document.querySelector(".zero_button");
+const addToCart = document.querySelector(".add_to_cart");
+const cartBox = document.querySelector(".cart_box");
+const itemCount= document.querySelector(".items");
+let count = 0;
 
-console.log(sneakers);
 
 const setSlidePosition = (slide, index) => {
     slide.style.left = slideWidth * index + "px";
@@ -54,6 +62,49 @@ fourthSneaker.addEventListener("click", () => {
     thirdSneaker.classList.remove("current_sneaker");
     fourthSneaker.classList.add("current_sneaker");
     mainImage.src = "./images/image-product-4.jpg";
+})
+
+const increaseItems = () => {
+    count+= 1;
+    zeroButton.innerHTML = count;
+}
+const reduceItems = () => {
+    const reduce = count;
+    if (reduce != 0) {
+        count-= 1;
+    }
+    zeroButton.innerHTML = reduce;
+    itemCount.classList.remove("stash");
+    itemCount.innerHTML = reduce;
+    if (reduce === 0) {
+        itemCount.classList.add("stash");
+    }
+}
+
+additionButton.addEventListener("click", (increaseItems));
+minusButton.addEventListener("click", (reduceItems));
+
+mainImage.addEventListener("click", () => {
+    poppedImage.classList.remove("hide");
+    poppedSneakerCollection.classList.remove("conceal");
+    poppedImage.style.backgroundColor = "hsl(0, 0%, 0%, 75%)";
+})
+closeButton.addEventListener("click", () => {
+    poppedImage.classList.add("hide");
+    poppedSneakerCollection.classList.add("conceal");
+})
+addToCart.addEventListener("click", () => {
+    if (count === 0) {
+        itemCount.classList.add("stash");
+        cartBox.classList.remove("hidden");
+    } else {
+        itemCount.classList.remove("stash");
+        itemCount.innerHTML = count;
+    }
+    if (count != 0) {
+        return count;
+    }
+
 })
 
 nextButton.addEventListener("click", () => {

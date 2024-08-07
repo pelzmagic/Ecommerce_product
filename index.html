@@ -26,15 +26,15 @@
     </div>
     <div class="cart">
         <div class="cart_icon">
-        <img src="./images/icon-cart.svg" alt="a cart">
+        <img src="./images/icon-cart.svg" alt="a cart" class="cart_icon_reveal">
         </div>
         <div class="avartar_image">
         <img src="./images/image-avatar.png" alt="user_avartar" width="40" height="40" class="avartar">
         </div>
+        <p class="items stash"></p>
     </div>
   </header>
   <hr />
-
   <main class="sneaker_section">
     <div class="sneaker">
       <div class="sneaker_image">
@@ -84,20 +84,20 @@
       </div>
     </div>
   </main>
-  <div class="cart_box">
+  <div class="cart_box hidden">
     <h3>Cart</h3>
     <hr>
     <p class="cart_items">Your cart is empty.</p>
   </div>
 
   <!-- POPPED IMAGE AFTER CLICKING THE MAIN IMAGE -->
-    <div class="popped_image">
-      <div class="close_button">
-        <button class="close">
-          <img src="./images/icon-close.svg" class="close_button" alt="a close button">
-        </button>
-      </div>
+    <div class="popped_image hide">
       <div class="main_carousel">
+        <div class="close">
+          <div class="button">
+          <img src="./images/icon-close.svg" class="close_button" alt="a close button">
+          </div>
+        </div>
         <button class="left_carousel_button">
           <img src="./images/icon-previous.svg" class="previous_button" alt="a previous button">
         </button>
@@ -121,7 +121,7 @@
           <img src="./images/icon-next.svg" class="next_button" alt="a next button">
         </button>
       </div>
-      <div class="popped_sneaker_collection">
+      <div class="popped_sneaker_collection conceal">
         <div class="sneaker1">
           <img src="./images/image-product-1-thumbnail.jpg" alt="first sneaker thumbnail" class="first_pop_sneaker current-slide" width="100%" height="80">
         </div>
@@ -129,10 +129,10 @@
           <img src="./images/image-product-2-thumbnail.jpg" alt="second sneaker thumbnail" class="second_pop_sneaker" width="100%" height="80">
         </div>
         <div class="sneaker3">
-          <img src="./images/image-product-1-thumbnail.jpg" alt="first sneaker thumbnail" class="third_pop_sneaker" width="100%" height="80">
+          <img src="./images/image-product-3-thumbnail.jpg" alt="first sneaker thumbnail" class="third_pop_sneaker" width="100%" height="80">
         </div>
         <div class="sneaker4">
-          <img src="./images/image-product-1-thumbnail.jpg" alt="first sneaker thumbnail" class="fourth_pop_sneaker" width="100%" height="80">
+          <img src="./images/image-product-4-thumbnail.jpg" alt="first sneaker thumbnail" class="fourth_pop_sneaker" width="100%" height="80">
         </div>
       </div>
     </div>
