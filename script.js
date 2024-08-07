@@ -24,6 +24,9 @@ const zeroButton = document.querySelector(".zero_button");
 const addToCart = document.querySelector(".add_to_cart");
 const cartBox = document.querySelector(".cart_box");
 const itemCount= document.querySelector(".items");
+const cartIcon = document.querySelector(".cart_icon_reveal");
+const deleteCart = document.querySelector(".delete_cart");
+const filledCartBox = document.querySelector(".cart_box_filled");
 let count = 0;
 
 
@@ -84,6 +87,26 @@ const reduceItems = () => {
 additionButton.addEventListener("click", (increaseItems));
 minusButton.addEventListener("click", (reduceItems));
 
+addToCart.addEventListener("click", () => {
+    if (count === 0) {
+        itemCount.classList.add("stash");
+    } else {
+        itemCount.classList.remove("stash");
+        itemCount.innerHTML = count;
+    }
+})
+
+deleteCart.addEventListener("click", () => {
+    filledCartBox.classList.add("keep");
+    cartBox.classList.remove("hidden");
+})
+
+cartIcon.addEventListener("click", () => {
+    if (count === 0) {
+        cartBox.classList.remove("hidden");
+    }
+})
+
 mainImage.addEventListener("click", () => {
     poppedImage.classList.remove("hide");
     poppedSneakerCollection.classList.remove("conceal");
@@ -93,20 +116,6 @@ closeButton.addEventListener("click", () => {
     poppedImage.classList.add("hide");
     poppedSneakerCollection.classList.add("conceal");
 })
-addToCart.addEventListener("click", () => {
-    if (count === 0) {
-        itemCount.classList.add("stash");
-        cartBox.classList.remove("hidden");
-    } else {
-        itemCount.classList.remove("stash");
-        itemCount.innerHTML = count;
-    }
-    if (count != 0) {
-        return count;
-    }
-
-})
-
 nextButton.addEventListener("click", () => {
     const currentSlide = document.querySelector(".current_slide");
     const nextSlide = currentSlide.nextElementSibling;

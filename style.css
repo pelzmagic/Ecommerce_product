@@ -243,6 +243,15 @@ h1 {
     right: 2.5rem;
     border-radius: 10px;
 }
+.cart_box_filled {
+    width: 19rem;
+    height: 13rem;
+    background-color: var(--LIGHT_GRAYISH_BLUE);
+    position: absolute;
+    top: 4.25rem;
+    right: 2.5rem;
+    border-radius: 10px;
+}
 .cart_items {
     width: 38%;
     margin: auto;
@@ -251,6 +260,53 @@ h1 {
     font-weight: 700;
     font-family: inherit;
     color: var(--DARK_GREYISH_BLUE);
+}
+.filled_items {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    width: 85%;
+    margin: auto;
+    margin-top: 15px;
+}
+.cart_image {
+    border-radius: 5px;
+}
+.filled_text {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.sneaker_name {
+    font-size: .8rem;
+    color: var(--GRAYISH_BLUE);
+}
+.sneaker_deets{
+    font-family:inherit;
+    font-size: .8rem;
+    font-weight: 400;
+    color: var(--GRAYISH_BLUE);
+}
+.amount_to_pay {
+    display: inline-block;
+}
+.delete_cart {
+    position: absolute;
+    right: 5%;
+    top: 40%;
+}
+.checkout_button {
+    background-color: var(--ORANGE);
+    border: none;
+    width: 100%;
+    padding: .7rem;
+    border-radius: 5px;
+    font-weight: 700;
+}
+.cart_checkout {
+    margin: auto;
+    width: 85%;
+    margin-top: 22px;
 }
 h3 {
     font-size: .9rem;
@@ -411,5 +467,8 @@ img {
     display: none;
 }
 .stash {
+    display: none;
+}
+.store {
     display: none;
 }
