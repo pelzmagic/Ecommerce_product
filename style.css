@@ -65,10 +65,9 @@ header {
 }
 .nav_items {
     display: flex;
-    justify-content: space-between;
+    gap: 1.85rem;
 }
 nav {
-    /* border: 1px solid green; */
     width: 50%;
 }
 .cart {
@@ -471,4 +470,72 @@ img {
 }
 .store {
     display: none;
+}
+
+@media (max-width: 1400px) {
+    h1 {
+        width: 70%;
+    }
+    .sneaker_section {
+        gap: 6rem;
+    }
+    .sneaker_details {
+        gap: 1.3rem;
+    }
+    .sneaker_info {
+        width: 60%;
+    }
+    .main_carousel {
+        width: 35%;
+    }
+    .popped_sneaker_collection{
+        width: 29%;
+    }
+}
+
+@media (min-width: 1024px) and (max-width:1240px) {
+    h1 {
+        width: 70%;
+    }
+    .sneaker_info {
+        width: 70%;
+    }
+    .main_carousel {
+        width: 38%;
+    }
+    .popped_sneaker_collection{
+        width: 32%;
+    }
+}
+
+@media (max-width:1024px) {
+    h1 {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+    .sneaker_info {
+       width: 100%;
+       font-size: .65rem;
+    }
+    .add_to_cart {
+        width: 9rem;
+    }
+}
+@media (max-width: 545px) {
+    .nav_items {
+        position: fixed;
+        inset: 0 40% 0 0;
+        background-color: var(--WHITE);
+        flex-direction: column;
+        padding: min(30vh, 5rem) 2em;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 350ms ease-in;
+    }
+    a::after {
+        top: 1.3rem;
+    }
+    hr {
+        display: none;
+    }
 }

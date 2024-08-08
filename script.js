@@ -27,8 +27,10 @@ const itemCount= document.querySelector(".items");
 const cartIcon = document.querySelector(".cart_icon_reveal");
 const deleteCart = document.querySelector(".delete_cart");
 const filledCartBox = document.querySelector(".cart_box_filled");
+const checkoutButton = document.querySelector(".checkout_button");
+let sneakerQuantity = document.querySelector(".no_of_items");
+let amountToPay = document.querySelector(".amount_to_pay");
 let count = 0;
-
 
 const setSlidePosition = (slide, index) => {
     slide.style.left = slideWidth * index + "px";
@@ -84,6 +86,12 @@ const reduceItems = () => {
     }
 }
 
+const calculateCartItems = () => {
+    sneakerQuantity.innerHTML = count;
+    let price = 125.00 * sneakerQuantity.innerHTML;
+    return price.toFixed(2);
+}
+
 additionButton.addEventListener("click", (increaseItems));
 minusButton.addEventListener("click", (reduceItems));
 
@@ -93,20 +101,31 @@ addToCart.addEventListener("click", () => {
     } else {
         itemCount.classList.remove("stash");
         itemCount.innerHTML = count;
+        cartBox.classList.add("hidden");
+        filledCartBox.classList.add("store");
     }
-})
-
-deleteCart.addEventListener("click", () => {
-    filledCartBox.classList.add("keep");
-    cartBox.classList.remove("hidden");
 })
 
 cartIcon.addEventListener("click", () => {
-    if (count === 0) {
-        cartBox.classList.remove("hidden");
-    }
+    filledCartBox.classList.remove("store");
+    amountToPay.innerHTML = "= $" + calculateCartItems();
 })
 
+deleteCart.addEventListener("click", () => {
+    filledCartBox.classList.add("store");
+    cartBox.classList.remove("hidden");
+    itemCount.classList.add("stash");
+    zeroButton.innerHTML = "0";
+    count = 0;
+})
+
+checkoutButton.addEventListener("click", () => {
+    filledCartBox.classList.add("store");
+    itemCount.classList.add("stash");
+    zeroButton.innerHTML = "0";
+    count = 0;
+    cartBox.classList.add("hidden");
+})
 mainImage.addEventListener("click", () => {
     poppedImage.classList.remove("hide");
     poppedSneakerCollection.classList.remove("conceal");
