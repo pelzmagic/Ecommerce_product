@@ -3,20 +3,19 @@ const secondSneaker = document.querySelector(".second_sneaker");
 const thirdSneaker = document.querySelector(".third_sneaker");
 const fourthSneaker = document.querySelector(".fourth_sneaker");
 const mainImage = document.querySelector(".image");
-const track = document.querySelector(".carousel_track");
-const slides = Array.from(track.children);
 const previousButton = document.querySelector(".previous_button");
 const nextButton = document.querySelector(".next_button");
 const closeButton = document.querySelector(".close_button");
-const slideSize = slides[0].getBoundingClientRect();
-const slideWidth = slideSize.width;
 const firstPopSneaker = document.querySelector(".first_pop_sneaker");
 const secondPopSneaker = document.querySelector(".second_pop_sneaker");
 const thirdPopSneaker = document.querySelector(".third_pop_sneaker");
 const fourthPopSneaker = document.querySelector(".fourth_pop_sneaker");
 const poppedSneakerCollection = document.querySelector(".popped_sneaker_collection");
 const sneakers = Array.from(poppedSneakerCollection.children);
-const poppedImage = document.querySelector(".popped_image");
+const track = document.querySelector(".carousel_track");
+const slides = Array.from(track.children);
+const slideSize = slides[0].getBoundingClientRect().width;
+const modal = document.querySelector(".modal");
 const minusButton = document.querySelector(".minus_button");
 const additionButton = document.querySelector(".addition_button");
 const addToCartButton = document.querySelector(".add_to_cart");
@@ -33,7 +32,7 @@ let amountToPay = document.querySelector(".amount_to_pay");
 let count = 0;
 
 const setSlidePosition = (slide, index) => {
-    slide.style.left = slideWidth * index + "px";
+    slide.style.left = slideSize * index + "px";
 }
 
 slides.forEach(setSlidePosition);
@@ -127,13 +126,10 @@ checkoutButton.addEventListener("click", () => {
     cartBox.classList.add("hidden");
 })
 mainImage.addEventListener("click", () => {
-    poppedImage.classList.remove("hide");
-    poppedSneakerCollection.classList.remove("conceal");
-    poppedImage.style.backgroundColor = "hsl(0, 0%, 0%, 75%)";
+    modal.style.visibility = "visible";
 })
 closeButton.addEventListener("click", () => {
-    poppedImage.classList.add("hide");
-    poppedSneakerCollection.classList.add("conceal");
+    modal.style.visibility = "hidden";
 })
 nextButton.addEventListener("click", () => {
     const currentSlide = document.querySelector(".current_slide");

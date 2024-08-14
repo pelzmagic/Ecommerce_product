@@ -326,30 +326,30 @@ img {
 .third_popped_sneaker,
 .fourth_popped_sneaker {
     border-radius: 17px;
+    height: 100%;
+    object-fit: cover;
 }
-.popped_image {
-    position: absolute;
+.modal {
+    position: fixed;
+    background-color: hsl(0, 0%, 0%, 75%);
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
-    /* margin-top: 2.5rem; */
-    /* width: 29%; */
+    visibility: hidden;
 }
 .main_carousel {
-    height: 95%;
+    height: 400px;
     position: relative;
     width: 29%;
     margin: auto;
-    height: 450px;
     margin-top: 3.2rem;
 }
 .carousel_track_container {
-    padding: 10px;
     height: 100%;
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .carousel_track {
     padding: 0;
@@ -360,13 +360,10 @@ img {
     transition: transform 350ms ease-in;
 }
 .carousel_slide {
-    /* border: 1px solid yellow; */
     position: absolute;
     top: 0;
-    left: 0;
     bottom: 0;
     width: 100%;
-    height: 100%;
 }
 .left_carousel_button {
     position: absolute;
