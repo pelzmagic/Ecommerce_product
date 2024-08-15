@@ -33,6 +33,9 @@ let count = 0;
 
 const setSlidePosition = (slide, index) => {
     slide.style.left = slideSize * index + "px";
+    // console.log("Slide", index, "positioned at", slide.style.left);
+    // console.log("Slidesize:", slideSize);
+    // console.log("index", index);
 }
 
 slides.forEach(setSlidePosition);
@@ -126,11 +129,24 @@ checkoutButton.addEventListener("click", () => {
     cartBox.classList.add("hidden");
 })
 mainImage.addEventListener("click", () => {
-    modal.style.visibility = "visible";
+    modal.style.display = "block";
+    const slideSize = slides[0].getBoundingClientRect().width;
+    const setSlidePosition = (slide, index) => {
+        slide.style.left = slideSize * index + "px";
+    }
+    slides.forEach(setSlidePosition);
+    const currentSlide = document.querySelector(".current_slide");
+    const nextSlide = currentSlide.nextElementSibling;
+    const amountToMove = nextSlide.style.left;
+    track.style.transform = 'translateX(-' + amountToMove + ')';
+    currentSlide.classList.remove("current_slide");
+    nextSlide.classList.add("current_slide");
 })
+
 closeButton.addEventListener("click", () => {
-    modal.style.visibility = "hidden";
+    modal.style.display = "none";
 })
+
 nextButton.addEventListener("click", () => {
     const currentSlide = document.querySelector(".current_slide");
     const nextSlide = currentSlide.nextElementSibling;
