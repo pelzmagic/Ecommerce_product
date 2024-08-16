@@ -87,13 +87,13 @@
   </main>
   <div class="cart_box hidden">
     <h3>Cart</h3>
-    <hr>
+    <hr class="horizontal_line">
     <p class="cart_items">Your cart is empty.</p>
   </div>
   <div class="cart_box_filled store">
     <img src="./images/icon-delete.svg" alt="a delete icon" class="delete_cart">
     <h3>Cart</h3>
-    <hr />
+    <hr class="horizontal_line" />
     <div class="filled_items">
       <img src="./images/image-product-1.jpg" class="cart_image" alt="a sneaker that has been added to cart" width="50" height="50">
       <div class="filled_text">
@@ -108,6 +108,30 @@
     <div class="cart_checkout">
     <button class="checkout_button" alt="the cart checkout button">Checkout</button>
     </div>
+  </div>
+  <div class="mobile_carousel">
+    <button class="left_mobile_carousel_button">
+      <img src="./images/icon-previous.svg" class="previous_mobile_button" alt="a previous button">
+    </button>
+    <div class="mobile_carousel_track_container">
+      <ul class="mobile_carousel_track">
+        <li class="mobile_carousel_slide current_mobile_slide">
+          <img src="./images/image-product-1.jpg" alt="first sneaker image" class="first_popped_sneaker" width="100%">
+        </li>
+        <li class="mobile_carousel_slide">
+          <img src="./images/image-product-2.jpg" alt="second sneaker image" class="second_popped_sneaker" width="100%">
+        </li>
+        <li class="mobile_carousel_slide">
+          <img src="./images/image-product-3.jpg" alt="third sneaker image" class="third_popped_sneaker" width="100%">
+        </li>
+        <li class="mobile_carousel_slide">
+          <img src="./images/image-product-4.jpg" alt="fourth sneaker image" class="fourth_popped_sneaker" width="100%">
+        </li>
+      </ul>
+    </div>
+    <button class="right_mobile_carousel_button">
+      <img src="./images/icon-next.svg" class="next_mobile_button" alt="a next button">
+    </button>
   </div>
 
   <!-- POPPED IMAGE AFTER CLICKING THE MAIN IMAGE -->

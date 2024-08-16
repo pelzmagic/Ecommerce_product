@@ -28,17 +28,38 @@ const deleteCart = document.querySelector(".delete_cart");
 const filledCartBox = document.querySelector(".cart_box_filled");
 const checkoutButton = document.querySelector(".checkout_button");
 let sneakerQuantity = document.querySelector(".no_of_items");
+const mobileTrack = document.querySelector(".mobile_carousel_track");
+const mobileSlides = Array.from(mobileTrack.children);
+const mobileSlideSize = mobileSlides[0].getBoundingClientRect().width;
+const previousMobileButton = document.querySelector(".previous_mobile_button");
+const nextMobileButton = document.querySelector(".next_mobile_button");
+const navItems = document.querySelector(".nav_items");
+const menuButton = document.querySelector(".mobile-nav-toggle");
 let amountToPay = document.querySelector(".amount_to_pay");
 let count = 0;
 
 const setSlidePosition = (slide, index) => {
     slide.style.left = slideSize * index + "px";
-    // console.log("Slide", index, "positioned at", slide.style.left);
-    // console.log("Slidesize:", slideSize);
-    // console.log("index", index);
+}
+const setMobileSlidePosition = (mobileSlide, index) => {
+    mobileSlide.style.left = mobileSlideSize * index + "px";
 }
 
 slides.forEach(setSlidePosition);
+mobileSlides.forEach(setMobileSlidePosition);
+
+menuButton.addEventListener("click", (e) => {
+    const visibility = navItems.getAttribute("data-visible");
+    console.log(visibility);
+
+    if (visibility === "false") {
+        navItems.setAttribute("data-visible", true);
+        menuButton.setAttribute("aria-expanded", true);
+    } else {
+        navItems.setAttribute("data-visible", false);
+        menuButton.setAttribute("aria-expanded", false);
+    }
+})
 
 firstSneaker.addEventListener("click", () => {
     secondSneaker.classList.remove("current_sneaker");
@@ -163,6 +184,24 @@ previousButton.addEventListener("click", () => {
     track.style.transform = 'translateX(-' + amountToMove + ')';
     currentSlide.classList.remove("current_slide");
     previousSlide.classList.add("current_slide");
+})
+
+nextMobileButton.addEventListener("click", (e) => {
+    const currentMobileSlide = document.querySelector(".current_mobile_slide");
+    const nextMobileSlide = currentMobileSlide.nextElementSibling;
+    const amountToMove = nextMobileSlide.style.left;
+    mobileTrack.style.transform = 'translateX(-' + amountToMove + ')';
+    currentMobileSlide.classList.remove("current_mobile_slide");
+    nextMobileSlide.classList.add("current_mobile_slide");
+})
+
+previousMobileButton.addEventListener("click", (e) => {
+    const currentMobileSlide = document.querySelector(".current_mobile_slide");
+    const previousMobileSlide = currentMobileSlide.previousElementSibling;
+    const amountToMove = previousMobileSlide.style.left;
+    mobileTrack.style.transform = 'translateX(-' + amountToMove + ')';
+    currentMobileSlide.classList.remove("current_mobile_slide");
+    previousMobileSlide.classList.add("current_mobile_slide");
 })
 
 firstPopSneaker.addEventListener("click", () => {

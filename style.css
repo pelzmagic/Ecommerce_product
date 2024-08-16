@@ -333,6 +333,9 @@ img {
     height: 100%;
     object-fit: cover;
 }
+.mobile_carousel {
+    display: none;
+}
 .modal {
     position: fixed;
     background-color: hsl(0, 0%, 0%, 75%);
@@ -534,9 +537,9 @@ img {
         background-color: var(--WHITE);
         flex-direction: column;
         padding: min(30vh, 5rem) 2em;
-        z-index: 1000;
+        z-index: 12000;
         transform: translateX(-100%);
-        transition: transform 350ms ease-in;
+        transition: transform 350ms ease-out;
     }
     .nav_items[data-visible="true"] {
         transform: translateX(0%);
@@ -557,7 +560,7 @@ img {
         position: absolute;
         top: 2rem;
         left: 1rem;
-        z-index: 9999;
+        z-index: 12000;
         width: 2rem;
         aspect-ratio: 1;
         background-color: transparent;
@@ -565,13 +568,16 @@ img {
         background-repeat: no-repeat;
         border: 0;
     }
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url("./images/icon-close.svg");
+        z-index: 13000;
+    }
     .sneaker_section {
         flex-direction: column;
         padding: 0;
     }
     .sneaker_details {
         margin-top: 20rem;
-        border: 1px solid red;
         width: 100vw;
         padding: 1.3rem;
     }
@@ -579,17 +585,14 @@ img {
         display: none;
     }
     h1 {
-        border: 1px solid red;
         width: 70%;
     }
     .sneaker_info {
-        border: 1px solid blue;
         font-size: .9rem;
     }
     .slashed_price {
         position: absolute;
         right: 2rem;
-        bottom: 8.5rem;
     }
     .buttons {
         flex-direction: column;
@@ -607,48 +610,80 @@ img {
     }
     .cart_button {
         width: 100%;
-        border: 1px solid red;
         height: 3rem;
     }
     .add_to_cart {
         width: 100%;
         height: 3rem;
     }
-     /* .main_carousel {
-        position: fixed;
+    .mobile_carousel {
         display: block;
-        visibility: visible;
         width: 100vw;
-        border: 1px solid red;
-        width: 80%;
-        margin-top: 5rem;
         height: 300px;
-     } */
-     .modal {
-        display: block;
-        background-color: transparent;
-     }
-     .main_carousel {
-        width: 100vw;
-        margin-top: 5rem;
-        height: 300px;
-     }
-     .popped_sneaker_collection {
-        display: none;
-     }
-     /* .carousel_track {
-        transform: translateX()
-     } */
-     .close {
-        display: none;
-     }
-     .first_popped_sneaker,
-     .second_popped_sneaker,
-     .third_popped_sneaker,
-     .fourth_popped_sneaker {
-        border-radius: 0;
-     }
-     /* .cart_box_filled {
+        position: absolute;
+        top: 5rem;
+    }
+    .mobile_carousel_track_container {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+    }
+    .mobile_carousel_track {
+        position: relative;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        transition: transform 350ms ease-in;
+    }
+    .mobile_carousel_slide {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    .left_mobile_carousel_button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
         z-index: 9999;
-     } */
+        border: 0;
+        background-color: var(--WHITE);
+        width: 2rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+    }
+    .right_mobile_carousel_button {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform:translateY(-50%);
+        z-index: 9999;
+        border: 0;
+        background-color: var(--WHITE);
+        width: 2rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+    }
+    .first_popped_sneaker,
+    .second_popped_sneaker,
+    .third_popped_sneaker,
+    .fourth_popped_sneaker {
+        border-radius: 0;
+    }
+    .cart_box_filled {
+        z-index: 10000;
+        top: 6rem;
+        width: 95%;
+        right: 2.5%;
+    }
+    .cart_box {
+        z-index: 10000;
+        top: 6rem;
+        width: 95%;
+        right: 2.5%;
+    }
+    .horizontal_line {
+        display: block;
+    }
 }
